@@ -12,7 +12,7 @@ const ulIngridients = document.querySelector('#ingredients');
 console.log(ulIngridients);
     // Pobieram pierwszy element ul o id="ingredients"
 
-ingredients.forEach(function(product){
+const items = ingredients.map(function(product){
     //  Iteracja przez tablice ingredients
 
   const newLi = document.createElement("li");
@@ -24,13 +24,12 @@ ingredients.forEach(function(product){
   newLi.classList.add("item");
     // dodanie klasy item dla każdego elementu li
 
-  ulIngridients.append(newLi);
+  return newLi;
     // Dodanie nowego elementu li
-
-  console.log(newLi);
+    
 });
     
-    
+ulIngridients.append(...items)
 
     
 
